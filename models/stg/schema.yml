@@ -32,7 +32,6 @@ sources:
     database: ts_catalog_demo
     schema: dhsaphana_sapabap1
     tables:
-
       - name: afih
       - name: afko
       - name: aufk
