@@ -1,0 +1,96 @@
+version: 2
+
+sources:
+  - name: dhsaphana_stg
+    database: ts_catalog_demo
+    schema: dhsaphana_stg
+    tables:
+      - name: vw_customer
+      - name: vw_material_type
+      - name: vw_material
+      - name: vw_plant
+      - name: vw_purchasing_document_header
+      - name: vw_purchasing_document_category
+      - name: vw_purchasing_document_type
+      - name: vw_purchasing_document_history
+      - name: vw_purchasing_group
+      - name: vw_purchasing_document_status
+      - name: vw_purchasing_organization
+      - name: vw_sales_documents_rejection_reason
+      - name: vw_sales_document_item_status
+      - name: vw_sales_document_item
+      - name: vw_sales_document_header_status
+      - name: vw_sales_document_header
+      - name: vw_vendor
+      - name: vw_purchasing_document_item
+      - name: vw_company
+      - name: vw_purchasing_document_overview
+      - name: vw_purchasing_document_schedule_total
+      - name: vw_purchasing_document_schedule_line
+  
+  - name: dhsaphana_sapabap1
+    database: ts_catalog_demo
+    schema: dhsaphana_sapabap1
+    tables:
+
+      - name: afih
+      - name: afko
+      - name: aufk
+      - name: dd07l
+      - name: dd07t
+      - name: ekbe
+      - name: ekes
+      - name: eket
+      - name: ekko
+      - name: ekpo
+      - name: kna1
+      - name: lfa1
+      - name: likp
+      - name: lips
+      - name: makt
+      - name: mara
+      - name: pmco
+      - name: qmel
+      - name: qmfe
+      - name: qmih
+      - name: qmsm
+      - name: qpcd
+      - name: qpct
+      - name: qpgr
+      - name: qpgt
+      - name: t001
+      - name: t001w
+      - name: t005
+      - name: t005t
+      - name: t024
+      - name: t024e
+      - name: t025
+      - name: t025t
+      - name: t134
+      - name: t134t
+      - name: t161
+      - name: t161t
+      - name: t165m
+      - name: t165r
+      - name: t179
+      - name: t179t
+      - name: tcurc
+      - name: tcurt
+      - name: tcurv
+      - name: tka01
+      - name: tspa
+      - name: tspat
+      - name: tvag
+      - name: tvagt
+      - name: tvau
+      - name: tvaut
+      - name: tvko
+      - name: tvkot
+      - name: vbak
+      - name: vbap
+      - name: vbkd
+      - name: vbpa
+      - name: vbrk
+      - name: vbrp
+      - name: vbuk
+      - name: vbup
