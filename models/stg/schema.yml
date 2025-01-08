@@ -2,11 +2,9 @@ version: 2
 
 sources:
   - name: dhsaphana_stg
-    database: ts_catalog_demo
     schema: dhsaphana_stg
   
   - name: dhsaphana_sapabap1
-    database: ts_catalog_demo
     schema: dhsaphana_sapabap1
     tables:
       - name: dd07l
