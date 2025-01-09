@@ -7,7 +7,7 @@ EKKO.MANDT as Client_Id
 ,EKKO.BSAKZ as Control_Indicator
 ,EKKO.LOEKZ as Deletion_Indicator
 ,EKKO.STATU as Status_Purchasing_Document
-,CASE when EKKO.AEDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.AEDAT, {{ date_formatstr() }} ) END as Created_Date
+,{{ date_case_gen('EKKO.AEDAT','Created_Date')}}
 ,EKKO.ERNAM as Created_By
 ,EKKO.PINCR as Item_Number_Interval
 ,EKKO.LPONR as Last_Item_Number_Id
@@ -24,16 +24,16 @@ EKKO.MANDT as Client_Id
 ,EKKO.WAERS as Currency_Id
 ,EKKO.WKURS as Exchange_Rate
 ,EKKO.KUFIX as Exchange_Rate_Fixed
-,CASE when EKKO.BEDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.BEDAT, {{ date_formatstr() }} ) END as Purchasing_Document_Date
-,CASE when EKKO.KDATB in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.KDATB, {{ date_formatstr() }} ) END as Start_Validity_Period_Date
-,CASE when EKKO.KDATE in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.KDATE, {{ date_formatstr() }} ) END as End_Validity_Period_Date
-,CASE when EKKO.BWBDT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.BWBDT, {{ date_formatstr() }} ) END as Closing_Applications_Date
-,CASE when EKKO.ANGDT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.ANGDT, {{ date_formatstr() }} ) END as Quotation_Deadline_Date
-,CASE when EKKO.BNDDT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.BNDDT, {{ date_formatstr() }} ) END as Binding_Period_Quotation_Date
-,CASE when EKKO.GWLDT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.GWLDT, {{ date_formatstr() }} ) END as Warranty_Date
+,{{ date_case_gen('EKKO.BEDAT','Purchasing_Document_Date')}}
+,{{ date_case_gen('EKKO.KDATB','Start_Validity_Period_Date')}}
+,{{ date_case_gen('EKKO.KDATE','End_Validity_Period_Date')}}
+,{{ date_case_gen('EKKO.BWBDT','Closing_Applications_Date')}}
+,{{ date_case_gen('EKKO.ANGDT','Quotation_Deadline_Date')}}
+,{{ date_case_gen('EKKO.BNDDT','Binding_Period_Quotation_Date')}}
+,{{ date_case_gen('EKKO.GWLDT','Warranty_Date')}}
 ,EKKO.AUSNR as Bid_Invitation_Number_Id
 ,EKKO.ANGNR as Quotation_Number
-,CASE when EKKO.IHRAN in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.IHRAN, {{ date_formatstr() }} ) END as Quotation_Submission_Date
+,{{ date_case_gen('EKKO.IHRAN','Quotation_Submission_Date')}}
 ,EKKO.IHREZ as Your_Reference
 ,EKKO.VERKF as Salesperson
 ,EKKO.TELF1 as Vendors_Telephone_Number
@@ -83,13 +83,13 @@ EKKO.MANDT as Client_Id
 ,EKKO.DPTYP as Down_Payment_Indicator
 ,EKKO.DPPCT as Down_Payment_Percentage
 ,EKKO.DPAMT as Down_Payment_Amount_Val
-,CASE when EKKO.DPDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.DPDAT, {{ date_formatstr() }} ) END as Due_Down_Payment_Date
+,{{ date_case_gen('EKKO.DPDAT','Due_Down_Payment_Date')}}
 ,EKKO.MSR_ID as Process_Identification_Number
 ,EKKO.HIERARCHY_EXISTS as Part_Contract_Hierarchy
 ,EKKO.THRESHOLD_EXISTS as Threshold_Value_Exchange_Rates
 ,EKKO.LEGAL_CONTRACT as Legal_Contract_Number
 ,EKKO.DESCRIPTION as Contract_Name
-,CASE when EKKO.RELEASE_DATE in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.RELEASE_DATE, {{ date_formatstr() }} ) END as Release_Contract_Date
+,{{ date_case_gen('EKKO.RELEASE_DATE','Release_Contract_Date')}}
 ,EKKO.VSART as Shipping_Type_Id
 ,EKKO.HANDOVERLOC as Handover_Location
 ,EKKO.SHIPCOND as Shipping_Conditions_Id
@@ -108,7 +108,7 @@ EKKO.MANDT as Client_Id
 ,EKKO.VZSKZ as Interest_Calculation_Indicator_Id
 ,EKKO.FSH_SNST_STATUS as Snapshot_Status
 ,EKKO.POHF_TYPE as Document_Category
-,CASE when EKKO.EQ_EINDT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKKO.EQ_EINDT, {{ date_formatstr() }} ) END as Same_Delivery_Date
+,{{ date_case_gen('EKKO.EQ_EINDT','Same_Delivery_Date')}}
 ,EKKO.EQ_WERKS as Same_Plant_Id
 ,EKKO.FIXPO as Firm_Deal_Indicator
 ,EKKO.EKGRP_ALLOW as Take_Account_Purch_Group

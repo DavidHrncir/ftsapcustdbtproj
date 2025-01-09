@@ -3,8 +3,8 @@ EKET.MANDT as Client_Id
 ,EKET.EBELN as Purchasing_Document_Id
 ,EKET.EBELP as Purchasing_Document_Item_Id
 ,EKET.ETENR as Delivery_Schedule_Line_Counter_Id
-,CASE when EKET.EINDT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.EINDT, {{ date_formatstr() }} ) END as Item_Delivery_Date
-,CASE when EKET.SLFDT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.SLFDT, {{ date_formatstr() }} ) END as Stat_Rel_Del_Date
+,{{ date_case_gen('EKET.EINDT','Item_Delivery_Date')}}
+,{{ date_case_gen('EKET.SLFDT','Stat_Rel_Del_Date')}}
 ,EKET.LPEIN as Category_Delivery_Date_Id
 ,EKET.MENGE as Scheduled_Quantity
 ,EKET.AMENG as Previous_Quantity
@@ -17,7 +17,7 @@ EKET.MANDT as Client_Id
 ,EKET.QUNUM as Number_Quota_Arrangement
 ,EKET.QUPOS as Quota_Arrangement_Item
 ,EKET.MAHNZ as No_Rem_Expediters
-,CASE when EKET.BEDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.BEDAT, {{ date_formatstr() }} ) END as Order_Schedule_Line_Date
+,{{ date_case_gen('EKET.BEDAT','Order_Schedule_Line_Date')}}
 ,EKET.RSNUM as Reservation_Id
 ,EKET.SERNR as Bom_Explosion_Number_Id
 ,EKET.FIXKZ as Schedule_Line_Is_Fixed
@@ -29,18 +29,18 @@ EKET.MANDT as Client_Id
 ,EKET.VERID as Production_Version_Id
 ,EKET.ABART as Release_Type
 ,EKET.MNG02 as Committed_Quantity
-,CASE when EKET.DAT01 in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.DAT01, {{ date_formatstr() }} ) END as Committed_Date
-,CASE when EKET.ALTDT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.ALTDT, {{ date_formatstr() }} ) END as Previous_Delivery_Date
+,{{ date_case_gen('EKET.DAT01','Committed_Date')}}
+,{{ date_case_gen('EKET.ALTDT','Previous_Delivery_Date')}}
 ,EKET.AULWE as Route_Schedule_Id
-,CASE when EKET.MBDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.MBDAT, {{ date_formatstr() }} ) END as Material_Availability_Date
+,{{ date_case_gen('EKET.MBDAT','Material_Availability_Date')}}
 ,EKET.MBUHR as Matl_Staging_Tim
-,CASE when EKET.LDDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.LDDAT, {{ date_formatstr() }} ) END as Loading_Date
+,{{ date_case_gen('EKET.LDDAT','Loading_Date')}}
 ,EKET.LDUHR as Loading_Tim
-,CASE when EKET.TDDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.TDDAT, {{ date_formatstr() }} ) END as Transportation_Planning_Date
+,{{ date_case_gen('EKET.TDDAT','Transportation_Planning_Date')}}
 ,EKET.TDUHR as Transp_Plan_Tim
-,CASE when EKET.WADAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.WADAT, {{ date_formatstr() }} ) END as Goods_Issue_Date
+,{{ date_case_gen('EKET.WADAT','Goods_Issue_Date')}}
 ,EKET.WAUHR as Goods_Issue_Tim
-,CASE when EKET.ELDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.ELDAT, {{ date_formatstr() }} ) END as Goods_Receipt_End_Date
+,{{ date_case_gen('EKET.ELDAT','Goods_Receipt_End_Date')}}
 ,EKET.ELUHR as Goods_Receipt_End_Tim
 ,EKET.ANZSN as Number_Serial_Numbers
 ,EKET.NODISP as Reservation_Purc_Req
@@ -50,7 +50,7 @@ EKET.MANDT as Client_Id
 ,EKET.TSP as Forwarding_Agent_Id
 ,EKET.CD_LOCNO as Location_Number_In_Apo
 ,EKET.CD_LOCTYPE as Apo_Location_Type
-,CASE when EKET.HANDOVERDATE in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.HANDOVERDATE, {{ date_formatstr() }} ) END as Handover_Date
+,{{ date_case_gen('EKET.HANDOVERDATE','Handover_Date')}}
 ,EKET.HANDOVERTIME as Handover_Tim
 ,EKET.FSH_RALLOC_QTY as Requirement_Allocated_Quantity
 ,EKET.FSH_SALLOC_QTY as Allocated_Stock_Quantity
@@ -66,9 +66,9 @@ EKET.MANDT as Client_Id
 ,EKET.OTB_REASON as Reason
 ,EKET.CHECK_TYPE as Type_Otb_Check
 ,EKET.DL_ID as Dateline_Id_Guid
-,CASE when EKET.HANDOVER_DATE in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.HANDOVER_DATE, {{ date_formatstr() }} ) END as Transfer_Date
+,{{ date_case_gen('EKET.HANDOVER_DATE','Transfer_Date')}}
 ,EKET.NO_SCEM as No_Scem_Controlling
-,CASE when EKET.DNG_DATE in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKET.DNG_DATE, {{ date_formatstr() }} ) END as Rem_Date
+,{{ date_case_gen('EKET.DNG_DATE','Rem_Date')}}
 ,EKET.DNG_TIME as Reminder_Tim
 ,EKET.CNCL_ANCMNT_DONE as Cancellation_Threat_Made
 ,EKET.DATESHIFT_NUMBER as Number_Current_Date_Shifts

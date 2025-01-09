@@ -9,7 +9,7 @@ EKBE.MANDT as Client_Id
 ,EKBE.BUZEI as Item_In_Material_Document_Id
 ,EKBE.BEWTP as Purchase_Order_History_Category_Id
 ,EKBE.BWART as Movement_Type_Id
-,CASE when EKBE.BUDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKBE.BUDAT, {{ date_formatstr() }} ) END as Posting_In_The_Document_Date
+,{{ date_case_gen('EKBE.BUDAT','Posting_In_The_Document_Date')}}
 ,EKBE.MENGE as Qty
 ,EKBE.BPMNG as Quantity_In_Opun
 ,EKBE.DMBTR as Loccur_Amount
@@ -26,7 +26,7 @@ EKBE.MANDT as Client_Id
 ,EKBE.LFBNR as Reference_Document
 ,EKBE.LFPOS as Item_Reference_Document
 ,EKBE.GRUND as Reason_Movement_Id
-,CASE when EKBE.CPUDT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKBE.CPUDT, {{ date_formatstr() }} ) END as Entry_Date
+,{{ date_case_gen('EKBE.CPUDT','Entry_Date')}}
 ,EKBE.CPUTM as Entry_Tim
 ,EKBE.REEWR as Voice_Val
 ,EKBE.EVERE as Compliance_With_Shipping_Instr_Id
@@ -44,7 +44,7 @@ EKBE.MANDT as Client_Id
 ,EKBE.HSWAE as Local_Currency_Key_Id
 ,EKBE.BAMNG as BAMNG
 ,EKBE.CHARG as Batch_Id
-,CASE when EKBE.BLDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(EKBE.BLDAT, {{ date_formatstr() }} ) END as Document_In_Document_Date
+,{{ date_case_gen('EKBE.BLDAT','Document_In_Document_Date')}}
 ,EKBE.XWOFF as Calculation_Val_Open
 ,EKBE.XUNPL as Unplanned_Acct_Assgmt_Inv_Verification
 ,EKBE.ERNAM as Created_By

@@ -23,7 +23,7 @@ VBUK.MANDT as Client_Id
 ,VBUK.UVPRS as Pricing
 ,VBUK.VBTYP as Sd_Document_Category
 ,VBUK.VBOBJ as Sd_Document_Object
-,CASE when VBUK.AEDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(VBUK.AEDAT, {{ date_formatstr() }} ) END as Changed_Date
+,{{ date_case_gen('VBUK.AEDAT','Changed_Date')}}
 ,VBUK.FKIVK as Totals_Status
 ,VBUK.RELIK as Inv_List_Status
 ,VBUK.UVK01 as Header_Reserves_1

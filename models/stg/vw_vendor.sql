@@ -28,7 +28,7 @@ LFA1.MANDT as Client_Id
 ,LFA1.DATLT as Communication_Line_No
 ,LFA1.DTAMS as Dme_Indicator
 ,LFA1.DTAWS as Instruction_Key_Id
-,CASE when LFA1.ERDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(LFA1.ERDAT, {{ date_formatstr() }} ) END as Created_On_Date
+,{{ date_case_gen('LFA1.ERDAT','Created_On_Date')}}
 ,LFA1.ERNAM as Created_By
 ,LFA1.ESRNR as Por_Subscriber_Number
 ,LFA1.KONZS as Group_Key
@@ -57,10 +57,10 @@ LFA1.MANDT as Client_Id
 ,LFA1.STKZN as Natural_Person
 ,LFA1.SPERQ as Function_That_Will_Be_Blocked_Id
 ,LFA1.GBORT as Place_Birth
-,CASE when LFA1.GBDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(LFA1.GBDAT, {{ date_formatstr() }} ) END as Birth_Date
+,{{ date_case_gen('LFA1.GBDAT','Birth_Date')}}
 ,LFA1.SEXKZ as Sex
 ,LFA1.KRAUS as Credit_Information_Number
-,CASE when LFA1.REVDB in ('00000000', ' ') THEN NULL ELSE TO_DATE(LFA1.REVDB, {{ date_formatstr() }} ) END as Last_Review_External_Date
+,{{ date_case_gen('LFA1.REVDB ','Last_Review_External_Date')}}
 ,LFA1.QSSYS as Vendors_Qm_System_Id
 ,LFA1.KTOCK as Reference_Acct_Group_Id
 ,LFA1.PFORT as Po_Box_City
@@ -93,10 +93,10 @@ LFA1.MANDT as Client_Id
 ,LFA1.J_1KFTBUS as Type_Business_Id
 ,LFA1.J_1KFTIND as Type_Industry_Id
 ,LFA1.CONFS as Confirmation_Status
-,CASE when LFA1.UPDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(LFA1.UPDAT, {{ date_formatstr() }} ) END as Confirmation_Date
+,{{ date_case_gen('LFA1.UPDAT','Confirmation_Date')}}
 ,LFA1.UPTIM as Last_Change_Confirmation_Tim
 ,LFA1.NODEL as Central_Del_Block
-,CASE when LFA1.QSSYSDAT in ('00000000', ' ') THEN NULL ELSE TO_DATE(LFA1.QSSYSDAT, {{ date_formatstr() }} ) END as Validity_Certification_Date
+,{{ date_case_gen('LFA1.QSSYSDAT','Validity_Certification_Date')}}
 ,LFA1.PODKZB as Relevant_Pod
 ,LFA1.FISKU as Tax_Office_Responsible_Id
 ,LFA1.STENR as Tax_Number_At_Responsible_Tax_Authority
@@ -108,10 +108,10 @@ LFA1.MANDT as Client_Id
 ,LFA1.RG as Rg_Number
 ,LFA1.EXP as Issued_By
 ,LFA1.UF as State
-,CASE when LFA1.RGDATE in ('00000000', ' ') THEN NULL ELSE TO_DATE(LFA1.RGDATE, {{ date_formatstr() }} ) END as Rg_Issuing_Date
+,{{ date_case_gen('LFA1.RGDATE','Rg_Issuing_Date')}}
 ,LFA1.RIC as Ric_Number
 ,LFA1.RNE as Foreign_National_Registration
-,CASE when LFA1.RNEDATE in ('00000000', ' ') THEN NULL ELSE TO_DATE(LFA1.RNEDATE, {{ date_formatstr() }} ) END as Rne_Issuing_Date
+,{{ date_case_gen('LFA1.RNEDATE','Rne_Issuing_Date')}}
 ,LFA1.CNAE as Cnae_Id
 ,LFA1.LEGALNAT as Legal_Nature_Id
 ,LFA1.CRTN as Crt_Number
