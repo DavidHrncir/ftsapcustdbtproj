@@ -195,7 +195,6 @@ KNA1.KUNNR as Customer_Id
 ,KNA1.NAME1 as NAME1
 ,KNA1._FIVETRAN_DELETED as _Fivetran_Deleted
 ,KNA1._FIVETRAN_SYNCED as _Fivetran_Synced
-,KNA1._FIVETRAN_SAP_ARCHIVED as _Fivetran_Sap_Archived
 from {{source('dhsaphana_sapabap1', 'kna1')}} 
 where
 KNA1.MANDT in ('800')

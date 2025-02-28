@@ -13,7 +13,6 @@ T024E.EKORG as Purchasing_Organization_Id
 ,T024E.BUKRS_NTR as Cocdsubsstlmt_Id
 ,T024E._FIVETRAN_DELETED as _Fivetran_Deleted
 ,T024E._FIVETRAN_SYNCED as _Fivetran_Synced
-,T024E._FIVETRAN_SAP_ARCHIVED as _Fivetran_Sap_Archived
 from {{source('dhsaphana_sapabap1', 't024e')}}
 where
 T024E.MANDT in ('800')

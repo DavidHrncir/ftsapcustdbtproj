@@ -10,7 +10,6 @@ T024.EKGRP as Purchasing_Group_Id
 ,T024.EKNAM as Description_Purchasing_Group
 ,T024._FIVETRAN_DELETED as _Fivetran_Deleted
 ,T024._FIVETRAN_SYNCED as _Fivetran_Synced
-,T024._FIVETRAN_SAP_ARCHIVED as _Fivetran_Sap_Archived
 from {{source('dhsaphana_sapabap1', 't024')}}
 where
 T024.MANDT in ('800')

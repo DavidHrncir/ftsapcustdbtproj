@@ -159,7 +159,6 @@ VBAK.MANDT as Client_Id
 ,VBAK.GSBER as Business_Area_Id
 ,VBAK._FIVETRAN_DELETED as _Fivetran_Deleted
 ,VBAK._FIVETRAN_SYNCED as _Fivetran_Synced
-,VBAK._FIVETRAN_SAP_ARCHIVED as _Fivetran_Sap_Archived
 from {{source('dhsaphana_sapabap1', 'vbak')}}
 where
 VBAK.MANDT in ('800')

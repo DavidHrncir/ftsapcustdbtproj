@@ -56,7 +56,6 @@ T161.MANDT as Client_Id
 ,T161.WRF_ENABLE_DATELINE as Enable_Dateline
 ,T161._FIVETRAN_DELETED as _Fivetran_Deleted
 ,T161._FIVETRAN_SYNCED as _Fivetran_Synced
-,T161._FIVETRAN_SAP_ARCHIVED as _Fivetran_Sap_Archived
 , T161T.BATXT as Doc_Type_Descript
 from {{source('dhsaphana_sapabap1', 't161')}}
 Left Join {{source('dhsaphana_sapabap1', 't161t')}} on 

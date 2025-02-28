@@ -138,7 +138,6 @@ EKKO.MANDT as Client_Id
 ,EKKO.CON_DISTR_LEV as Distrib_Using_Target_Value_Or_Item
 ,EKKO._FIVETRAN_DELETED as _Fivetran_Deleted
 ,EKKO._FIVETRAN_SYNCED as _Fivetran_Synced
-,EKKO._FIVETRAN_SAP_ARCHIVED as _Fivetran_Sap_Archived
 from {{source('dhsaphana_sapabap1', 'ekko')}}
 where
 EKKO.MANDT in ('800')

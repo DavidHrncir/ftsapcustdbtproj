@@ -242,7 +242,6 @@ MARA.MANDT as Client_Id
 ,MARA.ZEIFO as Page_Format
 ,MARA._FIVETRAN_DELETED as _Fivetran_Deleted
 ,MARA._FIVETRAN_SYNCED as _Fivetran_Synced
-,MARA._FIVETRAN_SAP_ARCHIVED as _Fivetran_Sap_Archived
 , MAKT.MAKTX as Material_Description
 from {{source('dhsaphana_sapabap1', 'mara')}}
 Left Join {{source('dhsaphana_sapabap1', 'makt')}}  on 

@@ -37,7 +37,6 @@ T134.MANDT as Client_Id
 ,T134.KZRAC as Mand_Rp_Logistics
 ,T134._FIVETRAN_DELETED as _Fivetran_Deleted
 ,T134._FIVETRAN_SYNCED as _Fivetran_Synced
-,T134._FIVETRAN_SAP_ARCHIVED as _Fivetran_Sap_Archived
 , T134T.MTBEZ as Description_Material_Type
 from {{source('dhsaphana_sapabap1', 't134')}}
 Left Join {{source('dhsaphana_sapabap1', 't134t')}} on 

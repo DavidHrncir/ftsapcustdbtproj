@@ -45,7 +45,6 @@ VBUP.MANDT as Client_Id
 ,VBUP.UVP03 as Item_Reserves_3_Item_Status
 ,VBUP._FIVETRAN_DELETED as _Fivetran_Deleted
 ,VBUP._FIVETRAN_SYNCED as _Fivetran_Synced
-,VBUP._FIVETRAN_SAP_ARCHIVED as _Fivetran_Sap_Archived
 from {{source('dhsaphana_sapabap1', 'vbup')}}
 where
 VBUP.MANDT in ('800')
