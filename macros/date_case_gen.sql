@@ -5,7 +5,7 @@ THEN NULL ELSE
 {%- if target.type == 'databricks' -%}TO_DATE({{col_name}}, 'yyyyMMdd'
 {%- elif target.type == 'bigquery' -%}PARSE_DATE('%Y%m%d', {{col_name}}
 {%- else -%}TO_DATE({{col_name}}, 'YYYYMMDD'
-{% endif %}
+{%- endif -%}
 ) END 
 as {{alias_name}}
 {% endmacro %}
