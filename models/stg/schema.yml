@@ -5,7 +5,7 @@ sources:
     schema: dhsaphana_stg
   
   - name: dhsaphana_sapabap1
-    schema: dhsaphana_sapabap1
+    schema: dhsaphana_saphanadb
     tables:
       - name: dd07l
       - name: dd07t
